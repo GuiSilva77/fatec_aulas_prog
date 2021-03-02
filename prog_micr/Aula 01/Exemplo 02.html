@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Comentários podem ser feitos com ctrl + ; -->
+    <script>
+        let n1 = parseFloat(prompt('Digite um número:'))
+        let n2 = parseFloat(prompt('Digite um número:'))
+
+        let r = n1 + n2
+        //pode usar Number(), mas qualquer outra coisa que não seja número 
+        //será armazenado como NaN (not a Number), o que não acontece com o parsefloat()
+
+        //Comentários de uma linha só
+        /* Comentarios de várias linhas*/
+        document.write(`A soma de ${n1} e ${n2} é <b>${r}</b>.`)
+    </script>
+</body>
+</html>

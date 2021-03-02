@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercício 3</h1>
+    <p>Criar uma página que solicita três números (a, b e c), calcula x1 e x2 através da Fórmula de Bhaskara (também conhecida como Equação de 2º Grau) e exibe estas duas raízes como resultado. Durante a fórmula, há um cálculo de raiz quadrada, para isso pesquise sobre Math.sqrt(). Assim como no anterior, o segredo deste tipo de exercício não está no cálculo, é fácil achar no Google, o segredo é entender o cálculo e transformar em uma linha de código JavaScript válida.</p>
+    <script>
+        let a = Number(prompt("Valor de A:"))
+        let b = Number(prompt("Valor de B:"))
+        let c = Number(prompt("Valor de C:"))
+
+        let delta = Math.pow(b, 2) - (4 * a * c)
+
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a)
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a)
+        
+        document.write(`<ul><li>A raiz de X1 será ${x1} e X2 será ${x2}.<></1ul>`)
+
+    </script>
+</body>
+</html>
