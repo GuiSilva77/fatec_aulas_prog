@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+    <input id="campo1" type="text" placeholder="Preço base do produto"> 
+    <input id="campo2" type="text" placeholder="Preço base do produto">
+    <button id="botao">Calcular</button>
+    </form>
+
+
+    <script>
+        function exemplo() {
+            let price = parseFloat(campo1.value)
+            let discount = parseFloat(campo2.value)
+            
+            let amountDiscount = price * discount / 100
+            let finalPrice = price - amountDiscount
+
+            document.write(`
+            <ul>
+                <li> Preço final: <b>${finalPrice}</b>.</li>
+            </ul>
+            `)
+        }
+
+        botao.addEventListener('click', exemplo)
+    </script>
+</body>
+</html>

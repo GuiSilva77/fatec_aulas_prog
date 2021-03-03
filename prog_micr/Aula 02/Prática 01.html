@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática</title>
+</head>
+<body>
+<h1>Prática 01</h1>
+<p>Realizar bhaskara com forms</p>
+
+<form id="formulario">
+    <input id="n1" type="number" placeholder="insira o Valor de a">
+    <input id="n2" type="number" placeholder="insira o Valor de b">
+    <input id="n3" type="number" placeholder="insira o Valor de c">
+    <button id=botao>Calcular</button>
+</form>
+
+<div id="resultado"></div>
+
+<script>
+    function eq(event){
+        event.preventDefault()
+
+        let a = parseFloat(n1.value)
+        let b = parseFloat(n2.value)
+        let c = parseFloat(n3.value)
+        
+        let delta = Math.pow(b, 2) - (4 * a * c)
+
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a)
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a)
+        
+        resultado.innerHTML = `
+        <ul>
+            <li> O valor de x1 é: <b>${x1}</b></li>
+            <li> O valor de x2 é: <b>${x2}</b></li>
+        </ul>
+        `
+    }
+
+    formulario.addEventListener('submit', eq)
+</script>
+
+
+</body>
+</html>
