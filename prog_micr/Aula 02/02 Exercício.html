@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercício 02</h1>
+    <p>O objetivo é calcular o preço com desconto com base nos valores digitados.</p>
+    <form id="form">
+    <input id="preco" type="number" placeholder="Insira o preço">
+    <input id="desconto" type="number" placeholder="Insira o desconto">
+    <button id="botao">Calcular</button>
+    </form>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function desc(event){
+            event.preventDefault()
+            let prec = parseFloat(preco.value)
+            let desc = parseFloat(desconto.value)
+            
+            if (isNaN(prec)){
+            resultado.innerHTML = `
+            <ul>
+            <li>Insira um valor válido.</li>
+            </ul>
+            `
+            return
+        }
+
+        if (isNaN(desc)){
+            resultado.innerHTML = `
+            <ul>
+            <li>Insira um valor válido.</li>
+            </ul>
+            `
+            return
+        }
+
+            let precf = Number(prec) - (Number(prec) * (Number(desc) / 100)) 
+            
+            resultado.innerHTML = `
+            <p>
+                <li> O preço com o desconto é: ${precf}.</li>
+            </p>
+            `
+        }
+
+        form.addEventListener('submit', desc)
+    </script>
+    </body>
+</html>
