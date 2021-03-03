@@ -12,7 +12,7 @@
 
 <form id="formulario">
     <input id="n1" type="number" placeholder="insira o Valor de a">
-    <input id="n2" type="number" placeholder="insira o Valor de b">git s
+    <input id="n2" type="number" placeholder="insira o Valor de b">
     <input id="n3" type="number" placeholder="insira o Valor de c">
     <button id=botao>Calcular</button>
 </form>
@@ -32,6 +32,15 @@
         let x1 = (-b + Math.sqrt(delta)) / (2 * a)
         let x2 = (-b - Math.sqrt(delta)) / (2 * a)
         
+        if (delta < 0){
+            resultado.innerHTML = `
+            <ul>
+                <li>A equação retornou valor irreal.</li>
+                <li>Delta diferente de 0.</li>
+            </ul>
+            `
+            return
+        }
         resultado.innerHTML = `
         <ul>
             <li> O valor de x1 é: <b>${x1}</b></li>
