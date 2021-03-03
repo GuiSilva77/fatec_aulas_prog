@@ -4,18 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Areas</title>
+    <title>Exercício 01</title>
 </head>
 <body>
-   <script>
-        alert('Calculando')
-        let n1 = prompt('Digite o primeiro número:')
-        let n2 = prompt('Digite o segundo número:')
-        let plus = Number(n1) + Number(n2)
-        let min = Number(n1) - Number(n2)
-        let mult = Number(n1) * Number(n2)
-        let div = Number(n1) / Number(n2)
-            document.write(`A soma é ${plus}<br> A subtração é ${min}<br> A multiplicação é ${mult}<br> A divisão é ${div}`)        
+    <h1>Exercicio 01</h1>
+    <p>O objetivo é informar ao usuário o resultado de todas as operações básicas baseado na entrada de dados pelo usuário.</p>
+
+    <form id="formulario">
+        <input id="n1" type="number" placeholder="Insira o primeiro valor">
+        <input id="n2" type="number" placeholder="Insira o segundo valor">
+        <button id="botao">Calcular</button>
+    </form>
+
+    <div id="Resultado"></div>
+
+    <script>
+        function opB(event){
+            event.preventDefault()
+            let nu1 = parseFloat(n1.value)
+            let nu2 = parseFloat(n2.value)
+
+            if (isNaN(nu1)){
+                Resultado.innerHTML = `
+                <ul>
+                <li> Insira um valor válido.</li>
+                </ul>
+                `
+                return
+            }
+
+            if (isNaN(nu2)){
+                Resultado.innerHTML = `
+                <ul>
+                <li> Insira um valor válido.</li>
+                </ul>
+                `
+                return
+            }
+
+            let soma = nu1 + nu2
+            let diferenca = nu1 - nu2
+            let produto = nu1 * nu2
+            let quociente = nu1 / nu2
+
+            Resultado.innerHTML = `
+            <ul>
+            <li>A soma de <b>${nu1}</b> e <b>${nu2}</b> é <b>${soma}</b>.</li>
+            <li>A diferença de <b>${nu1}</b> e <b>${nu2}</b> é <b>${diferenca}</b>.</li>
+            <li>O produto de <b>${nu1}</b> e <b>${nu2}</b> é <b>${produto}</b>.</li>
+            <li>O Quociente de <b>${nu1}</b> e <b>${nu2}</b> é <b>${quociente}</b>.</li>
+            </ul>
+            `
+        }
+        formulario.addEventListener('submit', opB)
     </script>
 </body>
 </html>
