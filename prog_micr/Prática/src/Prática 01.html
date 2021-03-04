@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 01</title>
+</head>
+<body>
+<h1>Prática 01</h1>
+<p>O objetivo é fazer a multiplicação de matrizes.</p>
+    <form id="form">
+        <input id="mtl1" type="number" placeholder="Digite os dados da primeira linha">
+        <input id="mtl2" type="number" placeholder="Digite os dados da segunda linha">
+        <input id="mtl3" type="number" placeholder="Digite os dados da terceira linha">
+        <button id="botao">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function mul(event){
+            event.preventDefault()
+            let ml1 = parseFloat(mtl1.value)
+            let ml2 = parseFloat(mtl2.value)
+            let ml3 = parseFloat(mtl3.value)
+
+            let Matriz1 = {
+                ml1,
+                ml2,
+                ml3,}
+
+            resultado.innerHTML = `
+            <ul>
+                <li>A matriz é: ${Matriz1}.</li>
+            </ul>
+            `
+        }
+        form.addEventListener('submit', mul)
+
+
+
+
+
+
+    </script>
+</body>
+</html>
