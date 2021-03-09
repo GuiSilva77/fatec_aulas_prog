@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 01</title>
+</head>
+<body>
+
+<h1>Exemplo 1</h1>
+<p>O objetivo é como criar um formulario</p>
+
+<form id="formu">
+    <input id="n1" type="number" placeholder="digita o primeiro número">
+    <input id="n2" type="number" placeholder="digita o segundo número">
+    <input id="n3" type="number" placeholder="digita o terceiro número">
+    <button id="botao">Calcular</button>
+</form>
+
+<div id="resultado"></div>
+
+<script>
+// operadores lógicos && and, ! not, || or;
+    function ep(event){
+        event.preventDefault()
+    let a = parseFloat(n1.value)
+    let b = parseFloat(n2.value)
+    let c = parseFloat(n3.value)
+
+    let delta = (b * b) - (4 * a * c)
+
+    if (delta > 0){
+        resultado.innerHTML = `
+        <ul>
+            <li> O resultado é irreal. </li>
+        </ul>
+        `
+    }
+    }
+
+    formu.addEventListener('submit', ep)
+</script>
+</body>
+</html>
