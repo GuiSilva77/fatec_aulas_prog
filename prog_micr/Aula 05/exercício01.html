@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+    <link rel="stylesheet" href="../Aula 05/base.css">
+</head>
+<body>
+    <h1>Exercício 1</h1>
+    <p>O objetivo do exercício é fazer o usuário receber uma mensagem de acordo com o input do usuário.</p>
+<form id="formulario">
+    <input id="season" type="text" placeholder="Insira a estação do ano">
+    <button id="botao">Enviar</button>
+</form>
+<div id="resultado"></div>
+
+<script>
+    function main(event){
+        event.preventDefault()
+        if (season.value === 'verão'){resultado.innerHTML = `<p> Aproveite o dia e não se esqueça do protetor solar!</p>`}
+        else if (season.value === 'primavera'){resultado.innerHTML = `<p> Passeie nos parques e aproveite as flores!</p>`}
+        else if (season.value === 'outono'){resultado.innerHTML = `<p> Aproveite as frutas do outono!</p>`}
+        else if (season.value === 'inverno'){resultado.innerHTML = `<p> Cuidado com o frio, leve um agasalho!</p>`}
+        else {resultado.innerHTML = ''}
+    }
+formulario.addEventListener('submit', main)
+</script>
+</body>
+</html>
