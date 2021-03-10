@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+    <link rel="stylesheet" href="../prog_micr/Aula 05/base.css">
+</head>
+<body>
+    <h1>Exercício 01</h1>
+    <p>O objetivo é resolver a equação do segundo grau.</p>
+    <form id="formulario">
+        <input id="n1", type="number" placeholder="Insira o valor de a">
+        <input id="n2", type="number" placeholder="Insira o valor de b">
+        <input id="n3", type="number" placeholder="Insira o valor de c">
+        <button>Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function main(event){
+            event.preventDefault()
+
+            let a = parseFloat(n1.value)
+            let b = parseFloat(n2.value)
+            let c = parseFloat(n3.value)
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)){
+                resultado.innerHTML = `
+                <p>Insira um valor válido</p>
+                `
+            } else {
+                let delta = b * b - 4 * a * c
+
+                if (delta < 0){
+                    resultado.innerHTML = `
+                    <p> O resultado da equação é irreal.</p>
+                    `
+                } else {
+                    let x1 = (-b + Math.sqrt(delta))/(2*a)
+                    let x2 = (-b - Math.sqrt(delta))/(2*a)
+                    
+                    resultado.innerHTML = `
+                    <p> O valor de x1 é <b>${x1}</b> e x2 é <b>${x2}.</b></p>.
+                    `
+                }
+            }
+        }
+        formulario.addEventListener('submit', main)
+        </script>
+</body>
+</html>
