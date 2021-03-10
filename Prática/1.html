@@ -29,7 +29,7 @@
 
             if (isNaN(a) || isNaN(b) || isNaN(c)){
                 resultado.innerHTML = `
-                <p>Insira um valor válido</p>
+                <p>Insira um valor válido.</p>
                 `
             } else {
                 let delta = b * b - 4 * a * c
@@ -43,7 +43,7 @@
                     let x2 = (-b - Math.sqrt(delta))/(2*a)
                     
                     resultado.innerHTML = `
-                    <p> O valor de x1 é <b>${x1}</b> e x2 é <b>${x2}.</b></p>.
+                    <p> O valor de x1 é <b>${x1}</b> e x2 é <b>${x2}.</b></p>
                     `
                 }
             }
