@@ -29,14 +29,14 @@
 
             if (isNaN(a) || isNaN(b) || isNaN(c)){
                 resultado.innerHTML = `
-                <p>Insira um valor válido.</p>
+                <p style="color:red">Insira um valor válido.</p>
                 `
             } else {
                 let delta = b * b - 4 * a * c
 
                 if (delta < 0){
                     resultado.innerHTML = `
-                    <p> O resultado da equação é irreal.</p>
+                    <p style="color:red"> O resultado da equação é irreal.</p>
                     `
                 } else {
                     let x1 = (-b + Math.sqrt(delta))/(2*a)
@@ -49,6 +49,6 @@
             }
         }
         formulario.addEventListener('submit', main)
-        </script>
+    </script>
 </body>
 </html>
