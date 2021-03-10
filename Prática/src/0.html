@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula</title>
+</head>
+<body>
+    <h1>Aula 01</h1>
+
+    
+    <form id="form">
+        <input id="nome" type="text" placeholder="digite o seu nome">
+        <input id="genero" type="text" placeholder="digite o seu genero">
+        <button>Enviar</button>
+    </form>
+    
+    <div id="resultado"></div>
+
+    <script>
+    function main(event){
+    event.preventDefault()
+    
+        if (genero.value === 'masculino'){
+            resultado.innerHTML = `<p>Bom dia Sr. ${nome.value}</p>`
+        } else {
+            resultado.innerHTML = `<p>Bom dia Sra. ${nome.value}</p>`
+        }
+
+    }
+    form.addEventListener('submit', main)
+    </script>
+</body>
+</html>
+
