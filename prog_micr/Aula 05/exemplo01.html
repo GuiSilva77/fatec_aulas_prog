@@ -22,6 +22,7 @@
 
 <script>
 // operadores lógicos && and, ! not, || or;
+// operador ternário: condição ? comando ver. : comando falso
     function ep(event){
         event.preventDefault()
     let a = parseFloat(n1.value)
@@ -30,15 +31,21 @@
 
     let delta = (b * b) - (4 * a * c)
 
-    if (delta > 0){
+    if (delta < 0){
         resultado.innerHTML = `
         <ul>
             <li> O resultado é irreal. </li>
         </ul>
-        `
-    }
-    }
+        `} else{
 
+    
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a)
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a)
+            
+            resultado.innerHTML = `<ul><li>A raiz de X1 será ${x1} e X2 será ${x2}.</li></ul>`
+
+        }
+    }
     formu.addEventListener('submit', ep)
 </script>
 </body>
