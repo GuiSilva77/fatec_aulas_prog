@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#define pi 3.1415
 int main(){
 
     float raio, area;
@@ -7,7 +7,7 @@ int main(){
     printf("Insira o valor do raio: ");
     scanf("%f%*c", &raio);
 
-    area = 3.1415 * (raio * raio);
+    area = pi * (raio * raio);
 
     printf("A area do circulo eh: %f", area);
 
