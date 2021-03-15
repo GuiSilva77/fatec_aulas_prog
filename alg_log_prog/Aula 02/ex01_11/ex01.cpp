@@ -7,14 +7,6 @@ int main(){
     printf("Digite um numero:");
     scanf("%f%*c", &n1);
 
-    /* if () {
-
-    } else {
-
-    }
-
-    */
-
     if (n1 > 0){
         float n1p, n1c, n1sq, n1cs;
         n1p = pow(n1, 2);
