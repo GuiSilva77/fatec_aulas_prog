@@ -344,3 +344,13 @@ div.positive, div.success, p.positive, p.success {
 
 div.negative b, div.error b, p.negative b, p.error b, div.positive b, div.success b, p.positive b, p.success b {
   font-weight: 600;}
+
+
+.women {
+  color: #c21e56;
+}
+
+.men{
+  background-color: #000080;
+  color: #ffffff;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 01</title>
+    <link rel="stylesheet" href="..\Aula 05\base.css">
+</head>
+<body>
+    <form id="form" novalidate>
+        <input id="nome" type="text" placeholder="Insira seu Nome:">
+        <select id="gen" >
+            <option value=>---Gênero---</option>
+            <option value="f">Feminino</option>
+            <option value="m">Masculino</option>
+        </select>
+        <button>Enviar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function main(event){
+            event.preventDefault()
+
+            let name = nome.value
+            let genero = gen.value
+
+            gen.className = ''
+
+            if (genero === 'm'){
+                resultado.innerHTML = `<p class="men">Bom dia ${name}, bem vindo ao Motor Club.</p>`
+                //resultado.style.color = 'white'
+                //resultado.style.background = '#000080'
+            } else if (genero === 'f'){
+                resultado.innerHTML = `<p class="women">Bom dia ${name}, bem vindo ao salão Marrone.</p>`
+                //resultado.style.color = '#c21e56'
+            } else {
+                resultado.innerHTML = `<p class="negative">insira um valor válido</p>`
+                gen.className = 'negative'
+                gen.focus()
+                return
+            }
+        }
+        form.addEventListener('submit', main)
+    </script>
+</body>
+</html>
