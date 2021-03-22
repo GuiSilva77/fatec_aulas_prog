@@ -13,7 +13,7 @@ int main(){
     vpr = qkwh * vkwh;
     vprq = vpr - (vpr * 0.15);
 
-    printf("O valor a ser pago pela residencia sera de R$ %.2f, o valor do Kwh eh de R$ %.2f, e o valor a ser pago com 15 porcento de desconto sera de R$ %.2f", vpr, vkwh, vprq);
+    printf("O valor a ser pago pela residencia sera de R$ %.2f, o valor do Kwh eh de R$ %.2f,\n e o valor a ser pago com 15 porcento de desconto sera de R$ %.2f", vpr, vkwh, vprq);
 
     return 0;
 }

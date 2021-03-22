@@ -4,7 +4,7 @@
 int main(){
     float n1, pi, pf, arr;
 
-    printf("Insira um número: ");
+    printf("Insira um nÃºmero: ");
     scanf("%f%*c", &n1);
 
     pf = modf(n1, &pi);
