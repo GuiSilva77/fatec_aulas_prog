@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática</title>
+    <link rel="stylesheet" href="..\prog_micr\aula 05\base.css">
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <p>Digite a operação:
+        1- +
+        2- -
+        3- *
+        4- /
+    </p>
+    
+    <form id="form">
+        <input id="opcao" type="number" placeholder="Operação">
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function main(event)
+        {
+            event.preventDefault()
+            let ope = opcao.value
+
+            switch(ope)
+            {
+            case 7:
+            resultado.innerHTML = `Hello World`
+            break
+            
+            default:
+            resultado.innerHTML = `Insira um código válido.`
+            break
+            }
+        }
+        form.addEventListener('submit', main)
+
+    </script>
+</body>
+</html>
