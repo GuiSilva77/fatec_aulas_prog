@@ -47,6 +47,7 @@ int main()
         {
             n = l;
             decToHexa(n);
+            system:"pause";
         }
 
         printf("\n");
