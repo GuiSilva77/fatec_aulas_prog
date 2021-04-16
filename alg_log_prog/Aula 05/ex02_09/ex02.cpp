@@ -71,6 +71,7 @@ int main()
      printf("Total de Reprovados: %d\n", 6-(t2+t3));
      printf("----------------------------------\n");
      printf("Media da Classe: %d", media_classe);
+     printf("\n----------------------------------\n");
 
     return 0;
 }
