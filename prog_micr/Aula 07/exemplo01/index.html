@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="form" novalidate>
+    <input id="nome", type="text", placeholder="Insira seu nome">
+    <input id="idade", type="number", placeholder="Insira a sua idade">
+    <input id="peso", type="number", placeholder="Insira a sua idade em kg">
+    <input id="altura", type="number", placeholder="Insira a sua idade em cm">
+    <button>enviar</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script type="module">
+    form.addEventListener('submit', (event) => {
+      import { Pessoa } from "./calc.js";
+      event.preventDefault()
+      debugger
+      let Pessoa1 = new Pessoa
+
+      Pessoa1.nome = nome.value
+      Pessoa1.idade = idade.value
+      Pessoa1.peso = peso.value
+      Pessoa1.altura = altura.value
+
+      result.innerHTML = `<ul> 
+        <li> Nome: ${Pessoa1.nome}</li>
+        <li> Idade: ${Pessoa1.idade}</li>
+        <li> Peso: ${Pessoa1.peso}</li>
+        <li> Altura: ${Pessoa1.altura}</li>
+        </ul>`
+    })
+
+  </script>
+</body>
+</html>
