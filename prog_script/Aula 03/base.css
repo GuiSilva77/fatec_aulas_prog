@@ -1,0 +1,63 @@
+/* * todos os elementos de HTML*/
+* {
+  margin: 0; /*Margem Externa*/
+  padding: 0; /*Margem Interna*/
+}
+
+/*Corpo da página*/
+body {
+  min-height: 100vh; /*Altura mínima da pagina*/
+  display: flex; /*Flexbox para a página*/
+  flex-direction: column; /*Direção do flexbox*/
+}
+
+/*Estilo do cabeçalho*/
+header {
+  background: #000000; /*Cor de fundo*/
+  color: #ffff; /*Cor da fonte*/
+  text-align: center; /*Alinhamento do texto*/
+  font-size: 70px; /*Tamanho da fonte*/
+  font-weight: lighter; /*Grossura da fonte*/
+  padding: 50px; /*Margem interna*/
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /*Fontes*/
+}
+
+/*Estilo da barra de navegação*/
+nav {
+  background: #1c1c1c; /*Cor de fundo*/
+  display: flex; /*Flexbox para a barra*/
+  flex-direction: row; /*Direção do flexbox*/
+  position: sticky; /*Nav bar fixa ao scroll*/
+  top: 0; /*pulo do gato em cima*/
+}
+
+/*Estilo da Classe link (Para links)*/
+.link {
+  color: #ffff; /*Cor da fonte*/
+  flex: 1; /*Item de flexbox*/
+  float: left; /*Criação de blocos*/
+  background: #312323; /*Cor de fundo*/
+  text-align: center; /*Alinhamento de texto*/
+  padding: 10px; /*Margem Interna*/
+  text-decoration: none; /*Decorações de Itens*/
+  transition: 400ms; /*Transição de seleção*/
+}
+/*Highlight*/
+.link:hover {
+  background: #363636; /*Cor de fundo*/
+}
+
+section {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #d3d3d3; /*Cor de fundo*/
+  padding: 50px;
+  flex: 1;
+}
+
+footer {
+  background: #000000; /*Cor de fundo*/
+  color: #ffff;
+  text-align: center;
+  padding: 20px;
+  flex-shrink: 0;
+}

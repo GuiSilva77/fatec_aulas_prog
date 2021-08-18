@@ -12,8 +12,8 @@
             ],
             "cStandard": "c89",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-gcc-x86",
-            "compilerPath": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\g++.exe"
+            "intelliSenseMode": "windows-msvc-x64",
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30037/bin/Hostx64/x64/cl.exe"
         }
     ],
     "version": 4
