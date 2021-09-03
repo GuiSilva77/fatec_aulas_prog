@@ -73,10 +73,11 @@ nav {
   color: #ffff;
   float: left;
   background: #a88f87;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 10px;
   text-align: center;
   transition: 400ms;
-  margin: 5px;
+  margin: 7px;
   flex: 1;
 }
 
