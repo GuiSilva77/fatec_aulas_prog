@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarefa</title>
+    <link rel="stylesheet" href="base.css" />
+  </head>
+  <body>
+    <h1>Tarefa</h1>
+    <form id="form" novalidate>
+      <input id="valA" type="number" placeholder="Insira o Valor de a" />
+      <input id="valB" type="number" placeholder="Insira o Valor de b" />
+      <select id="opcao">
+        <option value="soma">Soma</option>
+        <option value="sub">Subtração</option>
+        <option value="mul">Multiplicação</option>
+        <option value="divi">Divisão</option>
+      </select>
+      <button>Enviar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
