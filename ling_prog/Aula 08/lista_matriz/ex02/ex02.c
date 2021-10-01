@@ -12,7 +12,6 @@ void mostrar(int t1, int t2, int *m)
       printf("\n[%d][%d] = %*d", i+1, j+1, *((m+i*t2)+j));
     }
   }
-}
 
 int inserir(int t_i, int t_j, int* soma, int* soma_d)
 {

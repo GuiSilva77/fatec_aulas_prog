@@ -29,6 +29,8 @@ int main()
   for (int n = 0; n < 10; n++)
     printf("\n[%d] = [%d]", n, vetor3[n]);
 
+  printf("\nHello World!");
+
   system("Pause");
   return EXIT_SUCCESS;
 }
