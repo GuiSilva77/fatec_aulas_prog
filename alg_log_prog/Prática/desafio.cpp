@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-main()
+int main()
 {
   char nomec[100], nome[70], sobrenome[30];
   int i = 0;
@@ -16,12 +16,11 @@ main()
   {
     sobrenome[i] = nomec[i];
     i++;
-  }
-  while(nomec[i] != ' ');
+  } while (nomec[i] != ' ');
 
   strrev(sobrenome);
 
   printf("%s", sobrenome);
-
+  system("Pause");
   return 0;
 }

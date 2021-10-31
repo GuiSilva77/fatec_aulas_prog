@@ -2,12 +2,10 @@
 #include <stdlib.h>
 #include <locale.h>
 
-main()
+int matriz[3][3], soma=0;
+
+void entradaDados()
 {
-  setlocale(LC_ALL, "portuguese");
-
-  int matriz[3][3], soma=0;
-
   printf("Insira os valores da matriz: ");
   for(int i=0;i<3;i++)
   {
@@ -17,9 +15,10 @@ main()
       scanf("%d", &matriz[i][j]);
     }
   }
+}
 
-  system("cls");
-
+void saidaDadosAntes()
+{
   printf("Matriz antes de 5: \n");
   for(int i=0;i<3;i++)
   {
@@ -29,14 +28,20 @@ main()
     }
     printf("\n");
   }
+}
 
+void calculo()
+{
   for(int i=0;i<3;i++)
   {
     for(int j=0;j<3;j++)
       matriz[i][j] *= 5;
 
   }
+}
 
+void saidaDadosDepois()
+{
   printf("Matriz depois de 5: \n");
   for(int i=0;i<3;i++)
   {
@@ -46,6 +51,19 @@ main()
     }
     printf("\n");
   }
+}
+
+int main()
+{
+  setlocale(LC_ALL, "portuguese");
+
+  entradaDados();
+
+  system("cls");
+
+  saidaDadosAntes();
+  calculo();
+  saidaDadosDepois();
 
   system("pause");
   return EXIT_SUCCESS;

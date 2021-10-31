@@ -1,56 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
-#include <string.h>
 
-int *inserir(int ti, int tj)
+void lerDados(int *p)
 {
-  int matriz[ti][tj];
-  memset(matriz, 0, ti * tj * sizeof(int));
-
-  printf("Matriz:");
-
-  for (int i = 0; i < ti; i++)
-  {
-    for (int j = 0; j < tj; j++)
-    {
-      printf("\n[%d][%d] = ", i, j);
-      scanf("%d", &matriz[i][j]);
-    }
-  }
-
-  return matriz;
+  printf("Insira um numero: ");
+  scanf("%d", p);
 }
 
-void mostrar(int *matriz, int i, int j)
+void processo(int *p)
 {
-  printf("Matriz: ");
-  for (int m = 0; m < i; m++)
-  {
-    for (int n = 0; n < j; n++)
-      printf("\n[%d][%d] = %d", m, n, *((matriz + m * j) + n));
-  }
+  printf("\n %d", *p);
 }
 
 int main(void)
 {
-  setlocale(LC_ALL, "portuguese");
+  int variavel = 0;
 
-  int i = 0, j = 0;
+  lerDados(&variavel);
 
-  printf("Insira o tamanho de i: ");
-  scanf("%d", &i);
-  printf("Insira o tamanho de j: ");
-  scanf("%d", &j);
+  printf("\n Variavel: %d", variavel);
 
-  int *matriz;
-  memset(matriz, 0, i * j * sizeof(int));
-  *matriz = inserir(i, j);
+  processo(&variavel);
 
-  system("clear");
-
-  mostrar((int *)matriz, i, j);
-
-  system("pause");
   return EXIT_SUCCESS;
 }

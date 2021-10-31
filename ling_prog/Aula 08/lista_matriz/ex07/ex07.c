@@ -2,12 +2,10 @@
 #include <stdlib.h>
 #include <locale.h>
 
-main()
+int matriz[3][3], pares=0, impares=0;
+
+void entradaDados()
 {
-  setlocale(LC_ALL, "portuguese");
-
-  int matriz[3][3], pares=0, impares=0;
-
   printf("Insira os valores da matriz: ");
   for(int i=0;i<3;i++)
   {
@@ -22,9 +20,10 @@ main()
         impares++;
     }
   }
+}
 
-  system("cls");
-
+void saidaDados()
+{
   printf("Matriz: \n");
   for(int k=0;k<3;k++)
   {
@@ -37,6 +36,17 @@ main()
 
   printf("\nQuantidade de elementos pares: %d", pares);
   printf("\nQuantidade de elementos impares: %d\n", impares);
+}
+
+int main()
+{
+  setlocale(LC_ALL, "portuguese");
+
+  entradaDados();
+
+  system("cls");
+
+  saidaDados();
 
   system("pause");
   return EXIT_SUCCESS;

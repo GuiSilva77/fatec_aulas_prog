@@ -2,12 +2,10 @@
 #include <stdlib.h>
 #include <locale.h>
 
-main()
+int matriz[6][6], v_10 = 0;
+
+void entradaDados()
 {
-  setlocale(LC_ALL, "portuguese");
-
-  int matriz[6][6], v_10 = 0;
-
   printf("Insira os valores da matriz: ");
   for(int i=0;i<6;i++)
   {
@@ -20,6 +18,13 @@ main()
         v_10++;
     }
   }
+}
+
+int main()
+{
+  setlocale(LC_ALL, "portuguese");
+
+  entradaDados();
 
   printf("\nValores maiores que dez: %d\n", v_10);
   system("pause");

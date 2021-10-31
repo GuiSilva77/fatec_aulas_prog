@@ -3,12 +3,11 @@
 #include <string.h>
 #include <locale.h>
 
-main()
-{
-  setlocale(LC_ALL, "portuguese");
-  char nomes[5][100], situacao[5][100];
-  float pr1[5], pr2[5], media[5];
+char nomes[5][100], situacao[5][100];
+float pr1[5], pr2[5], media[5];
 
+void entradaDados()
+{
   for(int i=0;i<6;i++)
   {
     printf("\nAluno %d: ", i+1);
@@ -18,7 +17,13 @@ main()
     scanf("%f", &pr1[i]);
     printf("PR2: ");
     scanf("%f", &pr2[i]);
+  }
+}
 
+void calculo()
+{
+  for(int i=0;i<6;i++)
+  {
     media[i] = (pr1[i] + pr2[i])/2;
 
     if (media[i] > 5)
@@ -26,9 +31,10 @@ main()
     else
       strcpy(situacao[i], "Reprovado");
   }
+}
 
-  system("cls");
-
+void saidaDados()
+{
   for(int k=0;k<6;k++)
   {
     printf("\nAluno %d: ", k+1);
@@ -38,6 +44,16 @@ main()
     printf("\nMédia: %.2f", media[k]);
     printf("\nSituação: %s", situacao[k]);
   }
+}
+
+int main()
+{
+  entradaDados();
+  calculo();
+
+  system("cls");
+
+  saidaDados();
 
   system("pause");
   return EXIT_SUCCESS;

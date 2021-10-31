@@ -1,15 +1,33 @@
-#include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-using namespace std;
-
-int main(int argc, const char **argv)
+int* popularArray(int t)
 {
+  int *a = (int*) calloc(0, t * sizeof(int));
 
-  cout << "Hello World!";
-  int num = 0;
-  cin >> num;
-  cout << num;
-  system("PAUSE");
-  return EXIT_SUCCESS;
+  srand(time(0));
+
+  for(int i=0; i <= t; i++)
+    *(a + i) = rand();
+
+  return a;
+}
+
+int main()
+{
+  int tamanho = 0, qt = 0;
+  printf("Insira o tamanho do vetor: ");
+  scanf("%d", &tamanho);
+
+  int *a = popularArray(tamanho);
+
+
+  for(int j=0; j < tamanho; j++)
+    printf("\n a[%d] = %d", j, a[j]);
+
+
+  free(a);
+
+  return 0;
 }

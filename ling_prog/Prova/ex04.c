@@ -4,6 +4,7 @@
 
 float nota1 = 0, nota2 = 0, media = 0;
 int faltas = 0;
+char conceito[1];
 
 void entrarDados()
 {
@@ -24,20 +25,39 @@ int calculo(float nota1, float nota2, int faltas)
 {
   media = (nota1+nota2)/2;
 
-  if ((media >= 6) && (faltas <= 20))
-    return 1;
+  if (media >= 9)
+    conceito[0] = 'E';
+  else if (media >= 8)
+    conceito[0] = 'A';
+  else if (media >= 6)
+    conceito[0] = 'B';
   else
-    return 2;
+    conceito[0] = 'M';
+    conceito[1] = 'F';
 }
 
-void mostarResultado(int situ)
+void mostarResultado()
 {
-  if (situ == 1)
-    printf("\nO Aluno está Aprovado.");
-  else
-    printf("\nO Aluno está Reprovado.");
+  switch (conceito[0]){
+  case 'E':
+    printf("\nAluno Aprovado.\nConceito: E");
+    break;
+  case 'A':
+    printf("\nAluno Aprovado.\nConceito: A");
+    break;
+  case 'B':
+    printf("\nAluno Aprovado.\nConceito: B");
+    break;
+  case 'M':
+    printf("\nAluno Reprovado.\nConceito: MF");
+    break;
+  case 'F':
+    printf("\nAluno Reprovado.\nConceito: F");
+    break;
+  default:
+    break;
+  }
 }
-
 int main()
 {
   setlocale(LC_ALL, "Portuguese");
@@ -48,7 +68,7 @@ int main()
     system("cls");
     entrarDados();
     int res = calculo(nota1, nota2, faltas);
-    mostarResultado(res);
+    mostarResultado();
 
     nota1 = 0, nota2 = 0, faltas = 0;
 
