@@ -1,0 +1,46 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  padding-top: 15px;
+  padding-bottom: 25px;
+}
+header {
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+body {
+  background: url("./SL_043021_42650_02.jpg");
+  background-size: auto;
+}
+
+button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.ctn {
+  background-color: #ffffff;
+  border-radius: 1.5%;
+  padding: 10px;
+}
+
+.sp {
+  padding-top: 50px;
+}
+
+.div-negative {
+  color: red;
+  font-size: small;
+}
+
+.input-negative {
+  border-color: red;
+}
+
+footer {
+  height: 100px;
+  margin-top: 20px;
+}

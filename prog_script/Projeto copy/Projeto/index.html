@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aula 11</title>
+    <!-- <link
+      rel="stylesheet"
+      href="/prog_script/bootstrap-5.0.2-dist/css/bootstrap.css"
+    /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"
+    /> -->
+    <link rel="stylesheet" href="./prj.css" />
+    <script
+      type="text/javascript"
+      src="/prog_script/jquery-3.6.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/prog_script/jquery.mask.min.js"
+    ></script>
+    <script src="../Projeto/js/functions.js"></script>
+    <script type="text/javascript" src="../Projeto/js/main.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <section>
+      <div class="container ctn">
+        <!--Container principal-->
+        <h1>Criar Conta</h1>
+        <div class="row">
+          <!--Div de informações-->
+          <div class="col-md-12">
+            <div id="error"></div>
+            <div class="row">
+              <!--Div Nome-->
+              <div class="form-group col-md-6">
+                <label label for="txtNome">Nome:</label>
+                <input
+                  type="text"
+                  id="txtNome"
+                  name="txtNome"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label label for="txtSnome">Sobrenome:</label>
+                <input
+                  type="text"
+                  id="txtSnome"
+                  name="txtSnome"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="txtEndereco">Endereço:</label>
+              <input
+                type="text"
+                id="txtEndereco"
+                name="txtEndereco"
+                class="form-control"
+              />
+            </div>
+            <div class="row">
+              <!--Div CPF-->
+              <div class="form-group col-md-6">
+                <label for="txtCPF">CPF:</label>
+                <input
+                  type="text"
+                  id="txtCPF"
+                  name="txtCPF"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="txtTel">Telefone:</label>
+                <input
+                  type="text"
+                  id="txtTel"
+                  name="txtTel"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="form-group sp">
+              <label for="txtEmail">E-Mail:</label>
+              <input
+                type="text"
+                id="txtEmail"
+                name="txtEmail"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="txtConfEmail">Confirme E-Mail:</label>
+              <input
+                type="text"
+                id="txtConfEmail"
+                name="txtConfEmail"
+                class="form-control"
+              />
+            </div>
+            <div class="row">
+              <!--Div senha-->
+              <div class="form-group col-md-6">
+                <label label for="txtSenha">Senha:</label>
+                <input
+                  type="text"
+                  id="txtSenha"
+                  name="txtSenha"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label label for="txtConfSenha">Confirme a senha:</label>
+                <input
+                  type="text"
+                  id="txtConfSenha"
+                  name="txtConfSenha"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <button id="btnSalvar" class="btn btn-primary">
+                Criar Conta
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer></footer>
+  </body>
+</html>
