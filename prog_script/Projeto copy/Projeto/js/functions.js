@@ -36,15 +36,15 @@ export function writeData(path, data) {
   let fs = require("fs");
   fs.writeFileSync(path, JSON.stringify(data));
 }
-export function saveData([
+export function saveData(
   nome,
   sobrenome,
   endereco,
   cpf,
   telefone,
   email,
-  senha,
-]) {
+  senha
+) {
   // create an object with the parameters as attributes
   let data = {
     nome: nome,
@@ -70,13 +70,13 @@ export function saveData([
       // if the user confirms, overwrite the data
       let index = dataJson.findIndex((item) => item.email == data.email);
       dataJson[index] = data;
-      writeData("data.json", dataJson);
+      writeData("../json/db.json", dataJson);
     }
   }
   // if the data is not in the file, add the data to the file
   else {
     dataJson.push(data);
-    writeData("data.json", dataJson);
+    writeData("../json/db.json", dataJson);
   }
 }
 
