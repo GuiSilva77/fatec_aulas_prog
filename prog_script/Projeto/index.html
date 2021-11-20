@@ -12,15 +12,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="./prj.css" />
-    <script
-      type="text/javascript"
-      src="/prog_script/jquery-3.6.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/prog_script/jquery.mask.min.js"
-    ></script>
-    <script type="text/javascript" src="./main.js"></script>
+    <script type="text/javascript" src="./jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./jquery.mask.min.js"></script>
+    <!-- link online jquery validate -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script type="module" src="./fn.js"></script>
+    <script type="module" src="./main.js"></script>
   </head>
   <body>
     <header></header>
@@ -30,104 +27,135 @@
         <h1>Criar Conta</h1>
         <div class="row">
           <!--Div de informações-->
-          <div class="col-md-12">
-            <div id="error"></div>
-            <div class="row">
-              <!--Div Nome-->
-              <div class="form-group col-md-6">
-                <label label for="txtNome">Nome:</label>
+          <form id="form" novalidate>
+            <div class="col-md-12">
+              <div id="error"></div>
+              <div class="row">
+                <!--Div Nome-->
+                <div class="form-group col-md-6">
+                  <label label for="txtNome"
+                    >Nome:
+                    <span title="Obrigatório" title="Obrigatório" class="obg"
+                      >*</span
+                    >
+                  </label>
+                  <input
+                    type="text"
+                    id="txtNome"
+                    name="txtNome"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label label for="txtSnome"
+                    >Sobrenome:
+                    <span title="Obrigatório" class="obg">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="txtSnome"
+                    name="txtSnome"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="txtEndereco"
+                  >Endereço:
+                  <span title="Obrigatório" class="obg">*</span></label
+                >
                 <input
                   type="text"
-                  id="txtNome"
-                  name="txtNome"
+                  id="txtEndereco"
+                  name="txtEndereco"
                   class="form-control"
+                  required
                 />
               </div>
-              <div class="form-group col-md-6">
-                <label label for="txtSnome">Sobrenome:</label>
+              <div class="row">
+                <!--Div CPF-->
+                <div class="form-group col-md-6">
+                  <label for="txtCPF">CPF:</label>
+                  <input
+                    type="text"
+                    id="txtCPF"
+                    name="txtCPF"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="txtTel">Telefone:</label>
+                  <input
+                    type="text"
+                    id="txtTel"
+                    name="txtTel"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="form-group sp">
+                <label for="txtEmail"
+                  >E-Mail: <span title="Obrigatório" class="obg">*</span></label
+                >
                 <input
-                  type="text"
-                  id="txtSnome"
-                  name="txtSnome"
+                  type="email"
+                  id="txtEmail"
+                  name="txtEmail"
                   class="form-control"
+                  required
                 />
               </div>
-            </div>
-            <div class="form-group">
-              <label for="txtEndereco">Endereço:</label>
-              <input
-                type="text"
-                id="txtEndereco"
-                name="txtEndereco"
-                class="form-control"
-              />
-            </div>
-            <div class="row">
-              <!--Div CPF-->
-              <div class="form-group col-md-6">
-                <label for="txtCPF">CPF:</label>
+              <div class="form-group">
+                <label for="txtConfEmail"
+                  >Confirme E-Mail:
+                  <span title="Obrigatório" class="obg">*</span></label
+                >
                 <input
-                  type="text"
-                  id="txtCPF"
-                  name="txtCPF"
+                  type="email"
+                  id="txtConfEmail"
+                  name="txtConfEmail"
                   class="form-control"
+                  required
                 />
               </div>
-              <div class="form-group col-md-6">
-                <label for="txtTel">Telefone:</label>
-                <input
-                  type="text"
-                  id="txtTel"
-                  name="txtTel"
-                  class="form-control"
-                />
+              <div class="row">
+                <!--Div senha-->
+                <div class="form-group col-md-6">
+                  <label label for="txtSenha"
+                    >Senha:
+                    <span title="Obrigatório" class="obg">*</span></label
+                  >
+                  <input
+                    type="password"
+                    id="txtSenha"
+                    name="txtSenha"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label label for="txtConfSenha"
+                    >Confirme a senha:
+                    <span title="Obrigatório" class="obg">*</span></label
+                  >
+                  <input
+                    type="password"
+                    id="txtConfSenha"
+                    name="txtConfSenha"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <button id="btnSalvar" class="btn btn-primary">
+                  Criar Conta
+                </button>
               </div>
             </div>
-            <div class="form-group sp">
-              <label for="txtEmail">E-Mail:</label>
-              <input
-                type="text"
-                id="txtEmail"
-                name="txtEmail"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <label for="txtConfEmail">Confirme E-Mail:</label>
-              <input
-                type="text"
-                id="txtConfEmail"
-                name="txtConfEmail"
-                class="form-control"
-              />
-            </div>
-            <div class="row">
-              <!--Div senha-->
-              <div class="form-group col-md-6">
-                <label label for="txtSenha">Senha:</label>
-                <input
-                  type="text"
-                  id="txtSenha"
-                  name="txtSenha"
-                  class="form-control"
-                />
-              </div>
-              <div class="form-group col-md-6">
-                <label label for="txtConfSenha">Confirme a senha:</label>
-                <input
-                  type="text"
-                  id="txtConfSenha"
-                  name="txtConfSenha"
-                  class="form-control"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <button id="btnSalvar" class="btn btn-primary">
-                Criar Conta
-              </button>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>

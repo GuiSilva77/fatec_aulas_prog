@@ -1,0 +1,17 @@
+{
+  "name": "aula-13",
+  "version": "1.0.0",
+  "description": "Aula 13",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "author": "Guilherme",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.2.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1636071006 source:c:\users\guilh\documents\github\fatec_aulas_prog\ling_prog\aula 13\aula 13\main.c
+	<stdio.h>
+	<stdlib.h>
+

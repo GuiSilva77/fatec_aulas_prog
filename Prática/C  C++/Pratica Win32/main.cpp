@@ -23,8 +23,6 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
   if(!RegisterClassW(&wc))
     return -1;
 
-  renderwindow(500, 800)
-
   CreateWindowW(L"myWindowClass", L"Program",WS_OVERLAPPEDWINDOW | WS_VISIBLE, 100,100,500,500,NULL,NULL,NULL,NULL);
 
   MSG msg = {0};

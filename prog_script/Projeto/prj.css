@@ -1,6 +1,9 @@
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+.container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
 h1 {
   padding-top: 15px;
@@ -12,10 +15,22 @@ header {
 }
 
 body {
-  background: url("../img/SL_043021_42650_02.jpg");
+  background-color: lightgray;
   background-size: auto;
 }
 
+form input {
+  border-color: lightgray;
+}
+form input:not(:focus):invalid {
+  border-color: lightgray;
+}
+form input:focus:invalid {
+  border-color: lightgray !important;
+}
+form input.error-input:invalid {
+  border-color: red;
+}
 button {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -30,7 +45,9 @@ button {
 .sp {
   padding-top: 50px;
 }
-
+.obg {
+  color: red;
+}
 .div-negative {
   color: red;
   font-size: small;
