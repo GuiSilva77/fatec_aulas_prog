@@ -1,26 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int x, y;
-
-x = 3;
-y = 4;
-
-//crie uma função que recebe dois ponteiros para inteiro e troca os valores deles
-void troca(int *i, int *j)
-{
-  int *temp;
-  temp = i;
-  i = j;
-  j = temp;
-}
-
 int main()
 {
-  troca(&x, &y);
-
-  printf("x = %d\n", x);
-  printf("y = %d\n", y);
+  char *a, *b; //criação de dois ponteiros tipo char quando deveria ser um vetor de char
+  a[] = "abacate";
+  b[] = "uva";
+  if (a < b)
+    printf("%s vem antes de %s no dicionário", a, b);
+  else
+    printf("%s vem depois de %s no dicionário", a, b);
 
   return 0;
 }

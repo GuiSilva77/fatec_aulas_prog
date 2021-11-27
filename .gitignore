@@ -2,5 +2,10 @@
 *.log
 *.o
 *.exe
+*.cbp
+*.depend
+*.layout
 bootstrap-5.0.2-dist/
 node_modules/
+bin/
+obj/

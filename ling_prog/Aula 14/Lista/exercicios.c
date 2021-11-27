@@ -31,7 +31,7 @@ int main()
 //b)
 void troca(int *i, int *j)
 {
-  int *temp;
+  int *temp;  // criação de um ponteiro no lugar de uma variável
   *temp = *i; // *temp recebe o valor de *i
   *i = *j;    // * i recebe o valor de *j
   *j = *temp; // *j recebe o valor de *temp
@@ -40,8 +40,21 @@ void troca(int *i, int *j)
 //versão correta
 void troca(int *i, int *j)
 {
-  int *temp;
-  temp = i; // temp recebe o endereço de i
-  i = j;    // i recebe o endereço de j
-  j = temp; // j recebe o endereço de temp
+  int temp;
+  *temp = *i; // temp recebe o valor de i
+  *i = *j;    // i recebe o valor de j
+  *j = *temp; // j recebe o valor de temp
 }
+
+//c)
+//errada
+// obs 1:na prática o código funciona, mas há um erro de semantica
+char *a, *b; //
+a = "abacate";
+b = "uva";
+if (a < b)
+  printf("%s vem antes de %s no dicionário", a, b);
+else
+  printf("%s vem depois de %s no dicionário", a, b);
+
+//correta
