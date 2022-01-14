@@ -48,13 +48,21 @@ void troca(int *i, int *j)
 
 //c)
 //errada
-// obs 1:na prática o código funciona, mas há um erro de semantica
-char *a, *b; //
+char *a, *b; //voce está declarando dois ponteiros char sem menhum valor, asslim por natureza não será possivel adicionar um valor para elas, já que ela está escrita em um setor de memoria que não permite esse tipo de operação
 a = "abacate";
 b = "uva";
-if (a < b)
+if (a < b) // a < b é uma operação de comparação, ou seja, não é possivel comparar ponteiros
   printf("%s vem antes de %s no dicionário", a, b);
 else
   printf("%s vem depois de %s no dicionário", a, b);
 
 //correta
+char *a = "abacate", *b = "uva";
+if (strcmp(a, b) < 0)
+  printf("%s vem antes de %s no dicionário", a, b);
+else
+  printf("%s vem depois de %s no dicionário", a, b);
+
+//3-) 55024
+
+//4-)

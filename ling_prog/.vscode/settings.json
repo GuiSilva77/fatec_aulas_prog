@@ -1,5 +1,6 @@
 {
   "files.associations": {
-    "ex03.h": "c"
+    "ex03.h": "c",
+    "stdlib.h": "c"
   }
 }

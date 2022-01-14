@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>lista.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="lista-de-exerc%C3%ADcios">Lista de Exercícios</h1>
+<h2 id="ponteiros">Ponteiros</h2>
+<ol>
+<li></li>
+</ol>
+<pre class="hljs"><code><div>x = <span class="hljs-number">3</span>,
+y = <span class="hljs-number">4</span>,
+*p = <span class="hljs-number">4</span>
+</div></code></pre>
+<ol start="2">
+<li>a-) <em>Errado</em></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> <span class="hljs-comment">// main deve sempre ser um int e retornar um valor</span>
+</span>{
+  <span class="hljs-keyword">int</span> x, *p;
+  x = <span class="hljs-number">100</span>;
+  p = x; <span class="hljs-comment">// não é possivel assinalar um inteiro a um ponteiro sem que seja um endereço de memoria</span>
+  <span class="hljs-built_in">printf</span>(“Valor de p: % d.\n”, *p);
+}
+</div></code></pre>
+<p><em>Correto</em></p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-keyword">int</span> x, *p;
+  x = <span class="hljs-number">100</span>;
+  p = &amp;x;
+  <span class="hljs-built_in">printf</span>(“Valor de p
+         : % d.\n”, *p);
+
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<p>b-) <em>Errado</em></p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">troca</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *i, <span class="hljs-keyword">int</span> *j)</span>
+</span>{
+  <span class="hljs-keyword">int</span> *temp;  <span class="hljs-comment">// criação de um ponteiro no lugar de uma variável</span>
+  *temp = *i; <span class="hljs-comment">// temp não tem um valor para referenciar</span>
+  *i = *j;
+  *j = *temp; <span class="hljs-comment">// *j recebe o valor inexistente de *temp</span>
+}
+</div></code></pre>
+<p><em>Correto</em></p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">troca</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *i, <span class="hljs-keyword">int</span> *j)</span>
+</span>{
+  <span class="hljs-keyword">int</span> temp;
+  *temp = *i; <span class="hljs-comment">// temp recebe o valor de i</span>
+  *i = *j;    <span class="hljs-comment">// i recebe o valor de j</span>
+  *j = *temp; <span class="hljs-comment">// j recebe o valor de temp</span>
+}
+</div></code></pre>
+<p>c-) <em>Errado</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">char</span> *a, *b; <span class="hljs-comment">//voce está declarando dois ponteiros char sem nenhum valor, </span>
+             <span class="hljs-comment">//assim por natureza não será possivel adicionar um valor para elas, </span>
+             <span class="hljs-comment">//já que ela está escrita em um setor de memoria que não permite esse tipo de operação</span>
+a = <span class="hljs-string">"abacate"</span>;
+b = <span class="hljs-string">"uva"</span>;
+<span class="hljs-keyword">if</span> (a &lt; b) <span class="hljs-comment">// a &lt; b é uma operação de comparação, ou seja, não é possivel comparar o valor referenciado sem o *</span>
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s vem antes de %s no dicionário"</span>, a, b);
+<span class="hljs-keyword">else</span>
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s vem depois de %s no dicionário"</span>, a, b);
+</div></code></pre>
+<p><em>Correto</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">char</span> *a = <span class="hljs-string">"abacate"</span>, *b = <span class="hljs-string">"uva"</span>;
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(a, b) &lt; <span class="hljs-number">0</span>)
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s vem antes de %s no dicionário"</span>, a, b);
+<span class="hljs-keyword">else</span>
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s vem depois de %s no dicionário"</span>, a, b);
+</div></code></pre>
+<ol start="3">
+<li>
+<p>55024</p>
+</li>
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">minimax</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* v, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span>* <span class="hljs-built_in">min</span>, <span class="hljs-keyword">int</span>* <span class="hljs-built_in">max</span>)</span>
+</span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>)
+    {
+      *<span class="hljs-built_in">max</span> = v[i];
+      *<span class="hljs-built_in">min</span> = <span class="hljs-number">0</span>;
+    }
+    <span class="hljs-keyword">else</span>
+    <span class="hljs-keyword">if</span> (v[i] &gt; *<span class="hljs-built_in">max</span>)
+      *<span class="hljs-built_in">max</span> = v[i];
+    <span class="hljs-keyword">else</span>
+      *<span class="hljs-built_in">min</span> = v[i];
+  }
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-keyword">int</span> vetor[<span class="hljs-number">5</span>] = {<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">15</span>};
+  <span class="hljs-keyword">int</span> <span class="hljs-built_in">min</span> = <span class="hljs-number">0</span>, <span class="hljs-built_in">max</span> = <span class="hljs-number">0</span>;
+
+  minimax(vetor, <span class="hljs-number">5</span>, &amp;<span class="hljs-built_in">min</span>, &amp;<span class="hljs-built_in">max</span>);
+
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"min: %d"</span>, <span class="hljs-built_in">min</span>);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"max: %d"</span>, <span class="hljs-built_in">max</span>);
+
+  <span class="hljs-keyword">return</span> EXIT_SUCCESS;
+}
+</div></code></pre>
+<ol start="5">
+<li>
+<p>Enquanto <code>v[3]</code> e <code>v + 3</code> representam conceitualmente a mesma posição (4ª
+posição do vetor), <code>v[3]</code> representa o acesso padrão do dado de um vetor,
+enquanto <code>v + 3</code> representa a o acesso por meio da soma de <code>v</code>, que
+representa o primeiro item do vetor (apresentado também como <code>v[0]</code>), mais 3
+posições, por isso <code>v+3</code>.</p>
+</li>
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> a[<span class="hljs-number">99</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-comment">/*int*/</span>i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">99</span>; ++i) <span class="hljs-comment">//não seria i++? ++i somaria e depois retornaria;</span>
+  a[i] = <span class="hljs-number">98</span> - i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">99</span>; ++i)
+  a[i] = a[a[i]];
+</div></code></pre>
+<p>O código irá gerar um vetor de 0 a 49 a 0, pois o primeiro for ira correr apenas
+49 posições, de 0 a 49, e o segundo ocorrerá o mesmo, porem de 49 a 0;</p>
+<ol start="7">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">troca</span><span class="hljs-params">(<span class="hljs-keyword">float</span> *a, <span class="hljs-keyword">float</span> *b)</span>
+</span>{
+  <span class="hljs-keyword">float</span> temp = <span class="hljs-number">0</span>;
+  temp = *a;
+  *a = *b;
+  *b = temp
+}
+</div></code></pre>
+<ol start="8">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">char</span> *<span class="hljs-title">strcopy</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *str)</span>
+</span>{
+  <span class="hljs-comment">// pegar o tamanho da string</span>
+  <span class="hljs-keyword">int</span> tam = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">while</span> (str[tam] != <span class="hljs-string">'\0'</span>)
+  {
+    tam++;
+  }
+
+  <span class="hljs-comment">// copiar a string</span>
+  <span class="hljs-keyword">char</span> *str2 = (<span class="hljs-keyword">char</span> *)<span class="hljs-built_in">malloc</span>(tam * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>));
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; tam; i++)
+  {
+    str2[i] = str[i];
+  }
+
+  <span class="hljs-keyword">return</span> str2;
+}
+</div></code></pre>
+<ol start="9">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">minimax</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* v, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span>* <span class="hljs-built_in">min</span>, <span class="hljs-keyword">int</span>* <span class="hljs-built_in">max</span>)</span>
+</span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>)
+    {
+      *<span class="hljs-built_in">max</span> = v[i];
+      *<span class="hljs-built_in">min</span> = <span class="hljs-number">0</span>;
+    }
+    <span class="hljs-keyword">else</span>
+    <span class="hljs-keyword">if</span> (v[i] &gt; *<span class="hljs-built_in">max</span>)
+      *<span class="hljs-built_in">max</span> = v[i];
+    <span class="hljs-keyword">else</span>
+      *<span class="hljs-built_in">min</span> = v[i];
+  }
+}
+</div></code></pre>
+<ol start="10">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> x = <span class="hljs-number">100</span>, *p, **pp; <span class="hljs-comment">// declaração das variáveis x = 000, um ponteiro p, e um ponteiro para ponteiro pp;</span>
+  p = &amp;x; <span class="hljs-comment">// p aponta x</span>
+  pp = &amp;p; <span class="hljs-comment">// pp aponta p que aponta x</span>
+  <span class="hljs-built_in">printf</span>(“Valor de pp: % d\n”, **pp); <span class="hljs-comment">// impressão de pp, que tem resultado 100, já que ele aponta a p que aponta a x;</span>
+</div></code></pre>
+<ol start="11">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">int</span> *<span class="hljs-title">procurar_letra</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *str, <span class="hljs-keyword">char</span> letra)</span>
+</span>{
+  <span class="hljs-keyword">int</span> i, j, k, tamanho, *vetor;
+  tamanho = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; str[i] != <span class="hljs-string">'\0'</span>; i++)
+  {
+    <span class="hljs-keyword">if</span> (str[i] == letra)
+    {
+      tamanho++;
+    }
+  }
+  vetor = (<span class="hljs-keyword">int</span> *)<span class="hljs-built_in">malloc</span>(tamanho * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>; str[i] != <span class="hljs-string">'\0'</span>; i++)
+  {
+    <span class="hljs-keyword">if</span> (str[i] == letra)
+    {
+      vetor[j] = i;
+      j++;
+    }
+  }
+  <span class="hljs-keyword">return</span> vetor;
+}
+</div></code></pre>
+<ol start="12">
+<li></li>
+</ol>
+<p>a-) Assinalar que p é um ponteiro; b-) apontar o valor da variável apontada por
+p; c-) apontar o valor da variável apontada por p / multiplicação; c-) apontar o
+valor da posição seguinte apontada por p;</p>
+<ol start="13">
+<li>não vai compilar, pois o compilador não vai encontrar a biblioteca
+iostream.h</li>
+</ol>
+<hr>
+<h2 id="structs">Structs</h2>
+<ol>
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">aluno</span>
+{</span>
+  <span class="hljs-keyword">char</span> nome[<span class="hljs-number">50</span>];
+  <span class="hljs-keyword">int</span> matricula;
+  <span class="hljs-keyword">float</span> n1, n2;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-comment">//Escrever um programa que cadastre o nome, a matrícula e duas notas de vários alunos. </span>
+  <span class="hljs-comment">//Em seguida imprima a matrícula, o nome e a média de cada um deles.</span>
+
+  <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">aluno</span> <span class="hljs-title">alunos</span>[5];</span>
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o nome do aluno: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>, alunos[i].nome);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite a matricula do aluno: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;alunos[i].matricula);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite a nota 1 do aluno: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%f"</span>, &amp;alunos[i].n1);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite a nota 2 do aluno: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%f"</span>, &amp;alunos[i].n2);
+  }
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nMatricula: %d\nNome: %s\nMedia: %.2f\n"</span>, alunos[i].matricula, alunos[i].nome, (alunos[i].n1 + alunos[i].n2) / <span class="hljs-number">2</span>);
+  }
+}
+</div></code></pre>
+<ol start="2">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;locale.h&gt;</span></span>
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>
+{</span>
+  <span class="hljs-keyword">char</span> nome[<span class="hljs-number">50</span>];
+  <span class="hljs-keyword">float</span> altura, peso;
+  <span class="hljs-keyword">int</span> cpf[<span class="hljs-number">11</span>];
+  <span class="hljs-keyword">char</span> sexo;
+} Pessoa;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">procurar_pessoa</span><span class="hljs-params">(Pessoa *pessoas, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> cpf)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cadastrar_pessoa</span><span class="hljs-params">(Pessoa *pessoas, <span class="hljs-keyword">int</span> n)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">calcular_imc</span><span class="hljs-params">(Pessoa *pessoas, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> posicao)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">imprimir_pessoa</span><span class="hljs-params">(Pessoa pessoa)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+  setlocale(LC_ALL, <span class="hljs-string">"Portuguese"</span>);
+
+  <span class="hljs-keyword">int</span> n;
+
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Insira quantas pessoas você quer cadastrar: "</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;n);
+
+  Pessoa *pessoas = (Pessoa *)<span class="hljs-built_in">malloc</span>(n * <span class="hljs-keyword">sizeof</span>(Pessoa));
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n\nPessoa %d\n"</span>, i + <span class="hljs-number">1</span>);
+    cadastrar_pessoa(pessoas, i);
+  }
+
+  system(<span class="hljs-string">"cls"</span>);
+  <span class="hljs-keyword">int</span> cpf;
+
+  <span class="hljs-keyword">do</span>
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n\nInsira o CPF da pessoa que você quer procurar ou digite 0 para sair: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;cpf);
+
+    <span class="hljs-keyword">int</span> posicao = procurar_pessoa(pessoas, n, cpf);
+    <span class="hljs-keyword">if</span> (posicao != <span class="hljs-number">-1</span>)
+    {
+      imprimir_pessoa(pessoas[posicao]);
+      calcular_imc(pessoas, n, posicao);
+    }
+  } <span class="hljs-keyword">while</span> (cpf != <span class="hljs-number">0</span>);
+
+  getchar();
+  <span class="hljs-built_in">free</span>(pessoas);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cadastrar_pessoa</span><span class="hljs-params">(Pessoa *pessoas, <span class="hljs-keyword">int</span> n)</span>
+</span>{
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Insira o nome: "</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>, pessoas[n].nome);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Insira a altura: "</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%f"</span>, &amp;pessoas[n].altura);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Insira o peso: "</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%f"</span>, &amp;pessoas[n].peso);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Insira o CPF: "</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;pessoas[n].cpf);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Insira o sexo: "</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">" %c"</span>, &amp;pessoas[n].sexo);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">procurar_pessoa</span><span class="hljs-params">(Pessoa *pessoas, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> cpf)</span>
+</span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    <span class="hljs-keyword">if</span> (*pessoas[i].cpf == cpf)
+    {
+      <span class="hljs-keyword">return</span> i;
+    }
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">imprimir_pessoa</span><span class="hljs-params">(Pessoa pessoa)</span>
+</span>{
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nNome: %s\n"</span>, pessoa.nome);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Altura: %.2f\n"</span>, pessoa.altura);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Peso: %.2f\n"</span>, pessoa.peso);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"CPF: %d\n"</span>, pessoa.cpf);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Sexo: %c\n"</span>, pessoa.sexo);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">calcular_imc</span><span class="hljs-params">(Pessoa *pessoas, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> posicao)</span>
+</span>{
+  <span class="hljs-keyword">float</span> imc = pessoas[posicao].peso / (pessoas[posicao].altura * pessoas[posicao].altura);
+
+  <span class="hljs-keyword">if</span> (imc &lt; <span class="hljs-number">18.5</span>)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nIMC: %.2f - Abaixo do peso\n"</span>, imc);
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (imc &gt;= <span class="hljs-number">18.5</span> &amp;&amp; imc &lt;= <span class="hljs-number">24.9</span>)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nIMC: %.2f - Peso normal\n"</span>, imc);
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (imc &gt;= <span class="hljs-number">25</span> &amp;&amp; imc &lt;= <span class="hljs-number">29.9</span>)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nIMC: %.2f - Sobrepeso\n"</span>, imc);
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (imc &gt;= <span class="hljs-number">30</span> &amp;&amp; imc &lt;= <span class="hljs-number">34.9</span>)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nIMC: %.2f - Obesidade grau 1\n"</span>, imc);
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (imc &gt;= <span class="hljs-number">35</span> &amp;&amp; imc &lt;= <span class="hljs-number">39.9</span>)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nIMC: %.2f - Obesidade grau 2\n"</span>, imc);
+  }
+  <span class="hljs-keyword">else</span>
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nIMC: %.2f - Obesidade grau 3\n"</span>, imc);
+  }
+}
+</div></code></pre>
+<ol start="3">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;locale.h&gt;</span></span>
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>
+{</span>
+  <span class="hljs-keyword">char</span> nome[<span class="hljs-number">50</span>];
+  <span class="hljs-keyword">int</span> codigo;
+  <span class="hljs-keyword">float</span> preco;
+} Produto;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cadastrar_produtos</span><span class="hljs-params">(Produto *produto, <span class="hljs-keyword">int</span> n)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">buscar_produto</span><span class="hljs-params">(Produto *produto, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> codigo)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">imprimir_produto</span><span class="hljs-params">(Produto *produto, <span class="hljs-keyword">int</span> n)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+  setlocale(LC_ALL, <span class="hljs-string">"Portuguese"</span>);
+
+  <span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>;
+
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite a quantidade de produtos: "</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;n);
+
+  Produto *produto = (Produto *)<span class="hljs-built_in">malloc</span>(n * <span class="hljs-keyword">sizeof</span>(Produto));
+
+  cadastrar_produtos(produto, n);
+
+  system(<span class="hljs-string">"cls"</span>);
+
+  <span class="hljs-keyword">int</span> codigo = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">do</span>
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o codigo do produto ou digite 0 para sair: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;codigo);
+
+    <span class="hljs-keyword">int</span> posicao = buscar_produto(produto, n, codigo);
+
+    <span class="hljs-keyword">if</span> (posicao != <span class="hljs-number">-1</span>)
+    {
+      imprimir_produto(produto, posicao);
+      getchar();
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (codigo &gt; <span class="hljs-number">0</span>)
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Produto nao encontrado!\n"</span>);
+  } <span class="hljs-keyword">while</span> (codigo != <span class="hljs-number">0</span>);
+
+  <span class="hljs-built_in">free</span>(produto);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cadastrar_produtos</span><span class="hljs-params">(Produto *produto, <span class="hljs-keyword">int</span> n)</span>
+</span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    fflush(<span class="hljs-built_in">stdin</span>);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o nome do produto: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>, produto[i].nome);
+
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o codigo do produto: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;produto[i].codigo);
+
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o preco do produto: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%f"</span>, &amp;produto[i].preco);
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">buscar_produto</span><span class="hljs-params">(Produto *produto, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> codigo)</span>
+</span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    <span class="hljs-keyword">if</span> (produto[i].codigo == codigo)
+      <span class="hljs-keyword">return</span> i;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">imprimir_produto</span><span class="hljs-params">(Produto *produto, <span class="hljs-keyword">int</span> n)</span>
+</span>{
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Nome: %s\n"</span>, produto[n].nome);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Codigo: %d\n"</span>, produto[n].codigo);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Preco: %.2f\n"</span>, produto[n].preco);
+}
+</div></code></pre>
+<ol start="4">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;locale.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_CADASTRO 3</span>
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>
+{</span>
+  <span class="hljs-keyword">char</span> nome[<span class="hljs-number">50</span>];
+  <span class="hljs-keyword">int</span> cpf;
+  <span class="hljs-keyword">int</span> saldo;
+  <span class="hljs-keyword">int</span> senha;
+} Correntista;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cadastrar_CC</span><span class="hljs-params">(Correntista *cadastro, <span class="hljs-keyword">int</span> n)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">depositar_CC</span><span class="hljs-params">(Correntista *cadastro, <span class="hljs-keyword">int</span> n)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sacar_CC</span><span class="hljs-params">(Correntista *cadastro, <span class="hljs-keyword">int</span> n)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">consultar_CC</span><span class="hljs-params">(Correntista *cadastro, <span class="hljs-keyword">int</span> n)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">exibir_CC</span><span class="hljs-params">(Correntista *cadastro, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> cpf, <span class="hljs-keyword">int</span> senha)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+  setlocale(LC_ALL, <span class="hljs-string">"Portuguese"</span>);
+
+  Correntista cadastro[MAX_CADASTRO];
+
+  <span class="hljs-keyword">int</span> cpf, senha;
+  <span class="hljs-keyword">int</span> opcao;
+
+  cadastrar_CC(cadastro, MAX_CADASTRO);
+
+  system(<span class="hljs-string">"cls"</span>);
+
+  <span class="hljs-keyword">do</span>
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite uma opção\n"</span>
+           <span class="hljs-string">"1 - Cadastrar\n"</span>
+           <span class="hljs-string">"2 - Depositar\n"</span>
+           <span class="hljs-string">"3 - Sacar\n"</span>
+           <span class="hljs-string">"4 - Consultar\n"</span>
+           <span class="hljs-string">"5 - Sair\n"</span>
+           <span class="hljs-string">"Opcao: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;opcao);
+
+    <span class="hljs-keyword">switch</span> (opcao)
+    {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+      cadastrar_CC(cadastro, MAX_CADASTRO);
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+      depositar_CC(cadastro, MAX_CADASTRO);
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+      sacar_CC(cadastro, MAX_CADASTRO);
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+      consultar_CC(cadastro, MAX_CADASTRO);
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Opção inválida\n"</span>);
+      <span class="hljs-keyword">break</span>;
+    }
+  } <span class="hljs-keyword">while</span> (opcao != <span class="hljs-number">5</span>);
+
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cadastrar_CC</span><span class="hljs-params">(Correntista *cadastro, <span class="hljs-keyword">int</span> n)</span>
+</span>{
+  system(<span class="hljs-string">"cls"</span>);
+  <span class="hljs-keyword">int</span> i;
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o nome do correntista: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>, cadastro[i].nome);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o CPF do correntista: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;cadastro[i].cpf);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite a senha do correntista: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;cadastro[i].senha);
+
+    cadastro[i].saldo = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">do</span>
+    {
+      depositar_CC(cadastro, n);
+    } <span class="hljs-keyword">while</span> (cadastro[i].saldo &lt;= <span class="hljs-number">0</span>);
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">depositar_CC</span><span class="hljs-params">(Correntista *cadastro, <span class="hljs-keyword">int</span> n)</span>
+</span>{
+  <span class="hljs-keyword">int</span> i, cpf, valor;
+  system(<span class="hljs-string">"cls"</span>);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o CPF do correntista: "</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;cpf);
+
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    <span class="hljs-keyword">if</span> (cpf == cadastro[i].cpf)
+    {
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o valor a ser depositado: "</span>);
+      <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;valor);
+      cadastro[i].saldo += valor;
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Deposito realizado com sucesso!\n"</span>);
+
+      system(<span class="hljs-string">"pause"</span>);
+      system(<span class="hljs-string">"cls"</span>);
+      <span class="hljs-keyword">return</span>;
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sacar_CC</span><span class="hljs-params">(Correntista *cadastro, <span class="hljs-keyword">int</span> n)</span>
+</span>{
+  <span class="hljs-keyword">int</span> i, j, cpf, senha, valor;
+  system(<span class="hljs-string">"cls"</span>);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o CPF do correntista: "</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;cpf);
+
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    <span class="hljs-keyword">if</span> (cpf == cadastro[i].cpf)
+    {
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite a senha do correntista: "</span>);
+      <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;senha);
+
+      <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; n; j++)
+      {
+        <span class="hljs-keyword">if</span> (senha == cadastro[j].senha)
+        {
+          <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o valor a ser sacado: "</span>);
+          <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;valor);
+          cadastro[i].saldo -= valor;
+          <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Saque realizado com sucesso!\n"</span>);
+
+          system(<span class="hljs-string">"pause"</span>);
+          system(<span class="hljs-string">"cls"</span>);
+          <span class="hljs-keyword">return</span>;
+        }
+      }
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">consultar_CC</span><span class="hljs-params">(Correntista *cadastro, <span class="hljs-keyword">int</span> n)</span>
+</span>{
+  <span class="hljs-keyword">int</span> i, j, cpf, senha;
+  system(<span class="hljs-string">"cls"</span>);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite o CPF do correntista: "</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;cpf);
+
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    <span class="hljs-keyword">if</span> (cpf == cadastro[i].cpf)
+    {
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Digite a senha do correntista: "</span>);
+      <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;senha);
+
+      <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; n; j++)
+      {
+        <span class="hljs-keyword">if</span> (senha == cadastro[j].senha)
+        {
+          exibir_CC(cadastro, n, cpf, senha);
+          <span class="hljs-keyword">return</span>;
+        }
+      }
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">exibir_CC</span><span class="hljs-params">(Correntista *cadastro, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> cpf, <span class="hljs-keyword">int</span> senha)</span>
+</span>{
+  system(<span class="hljs-string">"cls"</span>);
+  <span class="hljs-keyword">int</span> i;
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+  {
+    <span class="hljs-keyword">if</span> (cpf == cadastro[i].cpf &amp;&amp; senha == cadastro[i].senha)
+    {
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Nome: %s\n"</span>, cadastro[i].nome);
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"CPF: %d\n"</span>, cadastro[i].cpf);
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Saldo: %d\n"</span>, cadastro[i].saldo);
+      getchar();
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">else</span>
+    {
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"CPF ou senha incorretos!\n"</span>);
+      getchar();
+      <span class="hljs-keyword">return</span>;
+    }
+  }
+}
+</div></code></pre>
+<ol start="5">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function">Lista *<span class="hljs-title">retira_ultimo</span><span class="hljs-params">(Lista *l)</span> </span>{
+    Lista *aux = l;
+    Lista *ant = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-keyword">while</span> (aux-&gt;prox != <span class="hljs-literal">NULL</span>) {
+        ant = aux;
+        aux = aux-&gt;prox;
+    }
+    <span class="hljs-keyword">if</span> (ant == <span class="hljs-literal">NULL</span>) {
+        <span class="hljs-built_in">free</span>(aux);
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;
+    }
+    ant-&gt;prox = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-built_in">free</span>(aux);
+    <span class="hljs-keyword">return</span> l;
+}
+</div></code></pre>
+<ol start="6">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function">Lista *<span class="hljs-title">constroi</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n <span class="hljs-keyword">int</span> *v)</span>
+</span>{
+    Lista *l = <span class="hljs-literal">NULL</span>;
+    Lista *p = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-keyword">int</span> i;
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        Lista *novo = (Lista *) <span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lista));
+        novo-&gt;info = v[i];
+        novo-&gt;prox = <span class="hljs-literal">NULL</span>;
+        <span class="hljs-keyword">if</span> (l == <span class="hljs-literal">NULL</span>) {
+            l = novo;
+        } <span class="hljs-keyword">else</span> {
+            p-&gt;prox = novo;
+        }
+        p = novo;
+    }
+    <span class="hljs-keyword">return</span> l;
+}
+</div></code></pre>
+<ol start="7">
+<li></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">lista</span>
+{</span>
+  <span class="hljs-keyword">char</span> nome[<span class="hljs-number">80</span>];
+  <span class="hljs-keyword">float</span> nota;
+  <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">lista</span> *<span class="hljs-title">prox</span>;</span>
+} <span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">lista</span> <span class="hljs-title">Lista</span>;</span>
+
+<span class="hljs-comment">// função para inserir um novo elemento na lista, retornando o ponteiro para a lista alterada</span>
+<span class="hljs-function">Lista *<span class="hljs-title">insere</span><span class="hljs-params">(Lista *l, <span class="hljs-keyword">char</span> *nome, <span class="hljs-keyword">float</span> nota)</span>
+</span>{
+  Lista *novo = (Lista *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lista));
+  <span class="hljs-built_in">strcpy</span>(novo-&gt;nome, nome);
+  novo-&gt;nota = nota;
+  novo-&gt;prox = l;
+  <span class="hljs-keyword">return</span> novo;
+}
+</div></code></pre>
+<ol start="8">
+<li>
+<p><strong>?</strong></p>
+</li>
+<li>
+<p><strong>?</strong></p>
+</li>
+<li>
+<p><strong>?</strong></p>
+</li>
+</ol>
+
+</body>
+</html>

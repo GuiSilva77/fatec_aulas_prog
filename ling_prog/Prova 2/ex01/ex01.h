@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct {
+typedef struct
+{
   char nome[100];
   int idade;
   char sexo;
@@ -27,11 +28,11 @@ void entrarDados(Funcionario *g)
   scanf("%f", &g->bonus_merito);
 }
 
-// função para encontrar ou a maior ou a menor idade de acordo com o sexo
+// funï¿½ï¿½o para encontrar ou a maior ou a menor idade de acordo com o sexo
 int encontrar(const char sexo, Funcionario *vetor, int tamanho)
 {
   int menor = 0, maior = 0;
-  int l=0, n=0;
+  int l = 0, n = 0;
 
   if (sexo == 'f')
   {
@@ -72,7 +73,7 @@ int encontrar(const char sexo, Funcionario *vetor, int tamanho)
   }
 }
 
-//função para calcular a media dos salarios
+//funï¿½ï¿½o para calcular a media dos salarios
 float media(Funcionario *vetor, int tamanho)
 {
   float media = 0;
@@ -85,7 +86,7 @@ float media(Funcionario *vetor, int tamanho)
   return media;
 }
 
-// função para realizar o reajuste de acordo com o salario
+// funÃ§Ã£o para realizar o reajuste de acordo com o salario
 void reajuste(Funcionario *vetor, int tamanho)
 {
   for (int i = 0; i <= tamanho; i++)
@@ -95,29 +96,29 @@ void reajuste(Funcionario *vetor, int tamanho)
       float aumento = vetor[i].salario * 0.10;
       vetor[i].salario += aumento;
       vetor[i].bonus_merito = 200;
-      // fiquei confuso sobre a parte do bonus mérito, eu não sabia se era para somar
-      // com o salario ouu não, na dúvida aqui está o código para adicionar no salario:
+      // fiquei confuso sobre a parte do bonus mï¿½rito, eu nï¿½o sabia se era para somar
+      // com o salario ouu nï¿½o, na dï¿½vida aqui estï¿½ o cï¿½digo para adicionar no salario:
       // vetor[i].salario += vetor[i].bonus_merito;
     }
   }
 }
-//função para mostrar os resultados
+//funï¿½ï¿½o para mostrar os resultados
 void mostrar(Funcionario *vetor, int tamanho)
 {
   for (int i = 0; i <= tamanho; i++)
   {
-     printf("\n --------------------------//--------------------------");
+    printf("\n --------------------------//--------------------------");
 
-     printf(
-           "\nNome: %s"
-           "\nIdade: %d"
-           "\nSexo: %c"
-           "\nSalario: %.2f"
-           "\nBonus Merito: %.2f", vetor[i].nome,
-                                 vetor[i].idade,
-                                 vetor[i].sexo,
-                                 vetor[i].salario,
-                                 vetor[i].bonus_merito
-           );
+    printf(
+        "\nNome: %s"
+        "\nIdade: %d"
+        "\nSexo: %c"
+        "\nSalario: %.2f"
+        "\nBonus Merito: %.2f",
+        vetor[i].nome,
+        vetor[i].idade,
+        vetor[i].sexo,
+        vetor[i].salario,
+        vetor[i].bonus_merito);
   }
 }
