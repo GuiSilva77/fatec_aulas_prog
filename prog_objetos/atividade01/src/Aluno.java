@@ -5,5 +5,13 @@ public class Aluno {
 	private String nascimento;
 	private String endereco;
 	private int enem;
+
+	public long getRa() {
+		return ra;
+	}
 	
+	public void setRa(long ra) {
+		this.ra = ra;
+	}	
 }
+
