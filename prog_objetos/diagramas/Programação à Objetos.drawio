@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-08-29T22:07:38.221Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="gXcvlgpsYyiCKmGvqCU-" version="20.2.7" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2022-08-30T00:12:02.640Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="UWheLE72yGi61U9Wtrpt" version="20.2.7" type="github" pages="8">
   <diagram id="I0EAlPF65fkOFm6Iaqlx" name="15/08 - ATV01">
     <mxGraphModel dx="1662" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -264,6 +264,46 @@
         <mxCell id="lL8EPe9ZKcrxqqtrsiMV-12" value="+setSigla(sigla: String):void &#xa;+setNome(nome: String):void&#xa;+setCarga(carga: int):void&#xa;+setEmenta(ementa: String):void&#xa;&#xa;+getSigla(): String&#xa;+getNome(): String&#xa;+getCarga(): int&#xa;+getEmenta(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="lL8EPe9ZKcrxqqtrsiMV-9">
           <mxGeometry y="108" width="190" height="142" as="geometry" />
         </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="3E5UPAIzo9lhro58Sl16" name="29/08 ATV01">
+    <mxGraphModel dx="950" dy="454" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="eVSW8KiCOA1F8SY0S2CM-1" value="Equipamento" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="230" y="460" width="230" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="eVSW8KiCOA1F8SY0S2CM-2" value="-numero: long&#xa;-descricao: String&#xa;-preco: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="eVSW8KiCOA1F8SY0S2CM-1">
+          <mxGeometry y="26" width="230" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="eVSW8KiCOA1F8SY0S2CM-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="eVSW8KiCOA1F8SY0S2CM-1">
+          <mxGeometry y="80" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="eVSW8KiCOA1F8SY0S2CM-4" value="+setNumero(numero: long): void&#xa;+setDescricao(descricao: String): void&#xa;+setPreco(preco: double): void&#xa;&#xa;+getNumero(): long&#xa;+getDescricao(): String&#xa;+getPreco(): double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="eVSW8KiCOA1F8SY0S2CM-1">
+          <mxGeometry y="88" width="230" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="eVSW8KiCOA1F8SY0S2CM-5" value="Peca" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="460" width="220" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="eVSW8KiCOA1F8SY0S2CM-6" value="-codigo: long&#xa;-nome: String&#xa;-quantidade: int&#xa;-valor: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="eVSW8KiCOA1F8SY0S2CM-5">
+          <mxGeometry y="26" width="220" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="eVSW8KiCOA1F8SY0S2CM-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="eVSW8KiCOA1F8SY0S2CM-5">
+          <mxGeometry y="100" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="eVSW8KiCOA1F8SY0S2CM-8" value="+setCodigo(codigo: long): void&#xa;+setNome(nome: String): void&#xa;+setQuantidade(quantidade: int): void&#xa;+setValor(valor: double): void&#xa;&#xa;+getCodigo(): long&#xa;+getNome(): String&#xa;+getQuantidade(): int&#xa;+getValor(): double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="eVSW8KiCOA1F8SY0S2CM-5">
+          <mxGeometry y="108" width="220" height="142" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5aVqkoTWI4G5PuDiqAP7" name="22/08 ATV03">
+    <mxGraphModel dx="950" dy="454" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
       </root>
     </mxGraphModel>
   </diagram>
