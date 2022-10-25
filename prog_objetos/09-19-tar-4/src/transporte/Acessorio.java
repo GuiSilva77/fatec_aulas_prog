@@ -28,4 +28,9 @@ public class Acessorio {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
+
+	@Override
+	public String toString() {
+		return "Acessorio [codigo=" + codigo + ", nome=" + nome + ", preco=" + preco + "]";
+	}
 }
